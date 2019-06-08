@@ -74,4 +74,7 @@ public String toString() {
 		return " ";
 	}
 }
+public int getRent() {
+	return rent;
+}
 }

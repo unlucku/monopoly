@@ -19,4 +19,13 @@ public static boolean getInput() {
 	else 
 	return false;
 }
+public static void checkWin() {
+	if (monopoly.player1.getBalance() < 0) {
+		System.out.println("Player 2 Won!");
+	}
+	if (monopoly.player2.getBalance() < 0) {
+		System.out.println("Player 1 Won!");
+	}
+	Thread.currentThread().stop();
+}
 }

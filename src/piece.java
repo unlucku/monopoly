@@ -40,6 +40,12 @@ public class piece {
 	 this.pos = id;
 	 board.setOccupy(id, name);
  }
+ public void increaseBalance(int b) {
+	 balance = b + balance;
+ }
+ public void decreaseBalance(int b) {
+	 balance = balance - b;
+ }
  public String toString() {
 	 String a = "Player " + name;
 	 String b = "Balance: $" + balance;
@@ -47,4 +53,17 @@ public class piece {
 	 for (int i = 0; i < owned.size(); i++) c += owned.get(i).getName() + " ";;
 	 return a + "\n" + b + "\n" + c;
  }
+public void payRent() {
+	int rent = board.game[pos].getRent();
+	decreaseBalance(rent);
+	if (name == 1) {
+		monopoly.player2.increaseBalance(rent);
+	}
+	else {
+		monopoly.player1.increaseBalance(rent);
+	}
+}
+public int getBalance() {
+	return balance;
+}
 }

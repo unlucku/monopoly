@@ -27,7 +27,21 @@ public static void main(String[] args) {
 			util.getPlayer(move).buyProperty();
 		 }
 		}
+		else if(board.game[util.getPlayer(move).getPos()].hasOwner()) {
+			System.out.println("You have to pay rent of: $" + board.game[util.getPlayer(move).getPos()].getRent());
+			util.getPlayer(move).payRent();
+		}
+		else if(board.game[util.getPlayer(move).getPos()].isSpecial()) {
+			//TODO
+		}
+		
+		
+		
+		
+		
+		
 		board.displayBoard();
+		util.checkWin();
 		if (move == 1) move = 2;
 		else move = 1;
 		continue;
