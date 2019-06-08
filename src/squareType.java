@@ -24,8 +24,27 @@ public class squareType {
   public int getOwner() {
 	  return owner;
   }
+  public void removeOccupy(int p) {
+	  if (occupied == 1 || occupied == 2) {
+		  occupied = 0;
+	  }
+	  else if (occupied == 3) {
+		  if (p == 1) {
+			  occupied = 2;
+		  }
+		  else {
+			  occupied = 3;
+		  }
+	  }
+  }
+  public void setOwner(int p) {
+	  this.owner = p;
+  }
   public int getID() {
 	  return id;
+  }
+  public Boolean isSpecial() {
+	  return special;
   }
 public int getCost() {
 	return cost;
