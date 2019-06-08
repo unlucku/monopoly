@@ -68,7 +68,9 @@ public int getBalance() {
 }
 public void displayNumericalList() {
 	 for (int i = 0; i < owned.size(); i++) {
+		 if (owned.get(i).isActive()) {
 		 System.out.println((i+1) + ". " +  owned.get(i).getName() + " " + owned.get(i).getCost());
+		 }
 	 }
 	}
 	
@@ -77,4 +79,19 @@ public void sellProperty(int prop) {
 	owned.get(prop-1).removeOwner();
 	owned.remove(prop-1);
 }
+public void displayNumericalListM() {
+	 for (int i = 0; i < owned.size(); i++) {
+		 if (!owned.get(i).isActive()) {
+		 System.out.println((i+1) + ". " +  owned.get(i).getName() + " " + owned.get(i).getCost());
+		 }
+	 }
+}
+public void mortgageProperty(int prop) {
+	increaseBalance(owned.get(prop-1).getCost()/2);
+	owned.get(prop-1).mortgageChange();
+ }
+public void unMortgageProperty(int prop) {
+	decreaseBalance(owned.get(prop-1).getCost()/2);
+	owned.get(prop-1).mortgageChange();
+ }
 }

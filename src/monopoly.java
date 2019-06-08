@@ -39,6 +39,8 @@ public static void main(String[] args) {
 		System.out.println("Choose one of the following options");
 		System.out.println("1. End turn");
 		System.out.println("2. Sell property");
+		System.out.println("3. Add mortgage");
+		System.out.println("4. Remove mortgage");
 		int option = s.nextInt();
 		s.nextLine();
 		if (option == 1) break;
@@ -48,6 +50,20 @@ public static void main(String[] args) {
 			int prop = s.nextInt();
 			s.nextLine();
 			util.getPlayer(move).sellProperty(prop);
+		 }
+		else if (option == 3) {
+			System.out.println("Which property would you like to mortgage?");
+			util.getPlayer(move).displayNumericalList();
+			int prop = s.nextInt();
+			s.nextLine();
+			util.getPlayer(move).mortgageProperty(prop);
+		 }
+		else if (option == 4) {
+			System.out.println("Which property would you like to unmortgage?");
+			util.getPlayer(move).displayNumericalListM();
+			int prop = s.nextInt();
+			s.nextLine();
+			util.getPlayer(move).unMortgageProperty(prop);
 		 }
 		}
 		board.displayBoard();

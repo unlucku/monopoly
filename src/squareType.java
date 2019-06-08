@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class squareType {
 	int id;
@@ -7,6 +8,7 @@ public class squareType {
   int owner;
   int occupied;
   Boolean special;
+  Boolean active;
   public squareType(String name, int cost, int rent, int id, Boolean special) {
 	  this.name = name;
 	  this.cost = cost;
@@ -15,6 +17,7 @@ public class squareType {
 	  this.special = special;
 	  this.occupied = 0;
 	  this.owner = 0;
+	  this.active = true;
   }
   public Boolean hasOwner() {
 	  return (owner != 0);
@@ -76,10 +79,37 @@ public String toString() {
 	}
 }
 public int getRent() {
-	return rent;
+	if (active) {
+	int r = rent;
+	if (name.equals("STATION")) {
+		ArrayList<squareType> a = util.getPlayer(owner).owned;
+		int m = -1;
+		for (int i = 0; i < a.size(); i++) {
+			if (a.get(i).getName().equals("STATION")) {
+				m++;
+			}
+		}
+		r = (int) (r * Math.pow(2, m));
+	}
+	return r;
+	}
+	else {
+		return 0;
+	}
 }
 public void removeOwner() {
 	owner = 0;
 	
 }
+public void mortgageChange() {
+	if (active) {
+	active = false;
+	}
+	else {
+	active = true;
+	}
+ }
+public boolean isActive() {
+	return active;
+ }
 }

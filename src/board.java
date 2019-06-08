@@ -7,7 +7,7 @@ public class board {
 		game[2] = new squareType("CHEST", 0, 0, 3, true);
 		game[3] = new squareType("WHITECHAP", 60, 2, 4, false);
 		game[4] = new squareType("TAX", 0, 0, 5, true);
-		game[5] = new squareType("STATION", 200, 0, 6, true);
+		game[5] = new squareType("STATION", 200, 25, 6, false);
 		game[6] = new squareType("ISLINGTON", 100, 6, 7, false);
 		game[7] = new squareType("CHANCE", 0, 0, 8, true);
 		game[8] = new squareType("EUSTON", 100, 6, 9, false);
@@ -17,7 +17,7 @@ public class board {
 		game[12] = new squareType("ELECTRIC", 150, 0, 13, true);
 		game[13] = new squareType("WHITEHALL", 140, 10, 14, false);
 		game[14] = new squareType("NORTHUMRL", 160, 2, 15, false);
-		game[15] = new squareType("STATION", 200, 0, 16, true);
+		game[15] = new squareType("STATION", 200, 25, 16, false);
 		game[16] = new squareType("BOW STREET", 180, 14, 17, false);
 		game[17] = new squareType("CHEST", 0, 0, 18, true);
 		game[18] = new squareType("MARLBOR", 180, 14, 19, false);
@@ -27,7 +27,7 @@ public class board {
 		game[22] = new squareType("CHANCE", 0, 0, 23, true);
 		game[23] = new squareType("FLEET", 220, 18, 24, false);
 		game[24] = new squareType("TRAFAL", 240, 20, 25, false);
-		game[25] = new squareType("STATION", 200, 0, 26, true);
+		game[25] = new squareType("STATION", 200, 25, 26, false);
 		game[26] = new squareType("LEICEST", 260, 22, 27, false);
 		game[27] = new squareType("COVENTI", 260, 22, 28, false);
 		game[28] = new squareType("WATER", 150, 0, 29, true);
@@ -37,7 +37,7 @@ public class board {
 		game[32] = new squareType("OXFORD", 300, 26, 33, false);
 		game[33] = new squareType("CHEST", 0, 0, 34, true);
 		game[34] = new squareType("BOND", 320, 28, 35, false);
-		game[35] = new squareType("STATION", 200, 0, 36, true);
+		game[35] = new squareType("STATION", 200, 25, 36, false);
 		game[36] = new squareType("CHANCE", 0, 0, 37, true);
 		game[37] = new squareType("PARK", 350, 35, 38, false);
 		game[38] = new squareType("TAX", 0, 0, 39, true);
