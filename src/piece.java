@@ -66,4 +66,15 @@ public void payRent() {
 public int getBalance() {
 	return balance;
 }
+public void displayNumericalList() {
+	 for (int i = 0; i < owned.size(); i++) {
+		 System.out.println((i+1) + ". " +  owned.get(i).getName() + " " + owned.get(i).getCost());
+	 }
+	}
+	
+public void sellProperty(int prop) {
+	increaseBalance(owned.get(prop-1).getCost());
+	owned.get(prop-1).removeOwner();
+	owned.remove(prop-1);
+}
 }

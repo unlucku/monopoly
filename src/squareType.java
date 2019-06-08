@@ -14,6 +14,7 @@ public class squareType {
 	  this.id = id;
 	  this.special = special;
 	  this.occupied = 0;
+	  this.owner = 0;
   }
   public Boolean hasOwner() {
 	  return (owner != 0);
@@ -76,5 +77,9 @@ public String toString() {
 }
 public int getRent() {
 	return rent;
+}
+public void removeOwner() {
+	owner = 0;
+	
 }
 }

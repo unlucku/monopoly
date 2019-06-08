@@ -32,14 +32,24 @@ public static void main(String[] args) {
 			util.getPlayer(move).payRent();
 		}
 		else if(board.game[util.getPlayer(move).getPos()].isSpecial()) {
-			//TODO
+			specialProperties.effect(board.game[util.getPlayer(move).getPos()], move);
 		}
-		
-		
-		
-		
-		
-		
+		while(true) {
+		System.out.println(util.getPlayer(move).toString());
+		System.out.println("Choose one of the following options");
+		System.out.println("1. End turn");
+		System.out.println("2. Sell property");
+		int option = s.nextInt();
+		s.nextLine();
+		if (option == 1) break;
+		else if (option == 2) {
+			System.out.println("Which property would you like to sell?");
+			util.getPlayer(move).displayNumericalList();
+			int prop = s.nextInt();
+			s.nextLine();
+			util.getPlayer(move).sellProperty(prop);
+		 }
+		}
 		board.displayBoard();
 		util.checkWin();
 		if (move == 1) move = 2;
