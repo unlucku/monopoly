@@ -9,6 +9,7 @@ public class squareType {
   int occupied;
   Boolean special;
   Boolean active;
+  ArrayList<house> houses = new ArrayList<house>();
   public squareType(String name, int cost, int rent, int id, Boolean special) {
 	  this.name = name;
 	  this.cost = cost;
@@ -24,6 +25,16 @@ public class squareType {
   }
   public String getName() {
 	  return name;
+  }
+  public String getInfoName() {
+	  String nameSuffix = name + " ";
+	  if (houses.size() >0 && houses.get(0).isHotel()){
+		  nameSuffix += "(H)";
+	  }
+	  else if (houses.size() > 0) {
+		  for (int z = 0; z < houses.size(); z++) nameSuffix += "(h)";
+	  }
+	  return nameSuffix;
   }
   public int getOwner() {
 	  return owner;
@@ -43,6 +54,17 @@ public class squareType {
   }
   public void setOwner(int p) {
 	  this.owner = p;
+  }
+  public void addHouse() {
+	  if (houses.size() == 4) {
+		  System.out.println("Reached max houses");
+		  return;
+	  }  
+	  houses.add(new house(id-1));
+	  if (houses.size() == 4) {
+		  houses = new ArrayList<house>();
+		  houses.add(new hotel(id-1));
+	  }
   }
   public int getID() {
 	  return id;
@@ -90,8 +112,19 @@ public int getRent() {
 			}
 		}
 		r = (int) (r * Math.pow(2, m));
+		return r;
 	}
-	return r;
+	if (houses.size() >0) {
+		if (houses.get(0).isHotel()) {
+			return (int) (r * 40);
+		}
+		else {
+			return (int) (r * Math.pow(2.5, houses.size()));
+		}
+	}
+	else {
+		return r;
+	  }
 	}
 	else {
 		return 0;

@@ -9,5 +9,8 @@ public class house implements building {
 	public int getCost() {
 		return cost;
 	}
+	public boolean isHotel() {
+		return false;
+	}
 
 }

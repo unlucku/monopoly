@@ -7,5 +7,8 @@ public class hotel extends house {
 	public int getCost() {
 		return cost;
 	}
+	public boolean isHotel() {
+		return true;
+	}
 
 }

@@ -50,7 +50,7 @@ public class piece {
 	 String a = "Player " + name;
 	 String b = "Balance: $" + balance;
 	 String c = "Properties: ";
-	 for (int i = 0; i < owned.size(); i++) c += owned.get(i).getName() + " ";;
+	 for (int i = 0; i < owned.size(); i++) c += owned.get(i).getInfoName() + " ";;
 	 return a + "\n" + b + "\n" + c;
  }
 public void payRent() {
@@ -94,4 +94,13 @@ public void unMortgageProperty(int prop) {
 	decreaseBalance(owned.get(prop-1).getCost()/2);
 	owned.get(prop-1).mortgageChange();
  }
+public void buildHouse(int prop) {
+	if (balance < 50) {
+		 System.out.println("Not enough funds!");
+	}
+	else {
+		balance -= 50;
+		owned.get(prop-1).addHouse();
+	}
+}
 }

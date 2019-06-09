@@ -41,6 +41,7 @@ public static void main(String[] args) {
 		System.out.println("2. Sell property");
 		System.out.println("3. Add mortgage");
 		System.out.println("4. Remove mortgage");
+		System.out.println("5. Build House");
 		int option = s.nextInt();
 		s.nextLine();
 		if (option == 1) break;
@@ -64,6 +65,13 @@ public static void main(String[] args) {
 			int prop = s.nextInt();
 			s.nextLine();
 			util.getPlayer(move).unMortgageProperty(prop);
+		 }
+		else if (option == 5) {
+			System.out.println("Which property would you like to buy a house?");
+			util.getPlayer(move).displayNumericalList();
+			int prop = s.nextInt();
+			s.nextLine();
+			util.getPlayer(move).buildHouse(prop);
 		 }
 		}
 		board.displayBoard();
