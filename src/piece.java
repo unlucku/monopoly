@@ -4,6 +4,7 @@ public class piece {
  int balance;
  int pos;
  int name;
+ int jailedTurns;
  ArrayList<squareType> owned = new ArrayList<squareType>();
  public piece(int name) {
 	 this.name = name;
@@ -42,6 +43,21 @@ public class piece {
  }
  public void increaseBalance(int b) {
 	 balance = b + balance;
+ }
+ public void decreaseJail() {
+	 if (jailedTurns > 0)
+	jailedTurns--;
+ }
+ public void setJailed() {
+	jailedTurns = 2;
+ }
+ public Boolean getJail() {
+	 if (jailedTurns == 0) {
+		 return false;
+	 }
+	 else {
+		 return true;
+	 }
  }
  public void decreaseBalance(int b) {
 	 balance = balance - b;

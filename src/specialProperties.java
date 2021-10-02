@@ -8,5 +8,9 @@ public class specialProperties {
 	   if (a.getName().equals("CHANCE") || a.getName().equals("CHEST")) {
 		cards.effect(move);
 	   }
+	   if (a.getName().equals("JAIL")) {
+		   System.out.println("You landed in jail!");
+		util.getPlayer(move).setJailed();
+	   }
    }
 }

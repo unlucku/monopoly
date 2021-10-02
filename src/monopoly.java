@@ -76,8 +76,17 @@ public static void main(String[] args) {
 		}
 		board.displayBoard();
 		util.checkWin();
-		if (move == 1) move = 2;
-		else move = 1;
+		if (move == 1 && !player2.getJail()) {
+			move = 2;
+		} else if (move == 1 && player2.getJail()) {
+			player2.decreaseJail();
+		}
+		else if (move == 2 && player1.getJail()) {
+			player1.decreaseJail();
+		}
+		else if (move == 2 && !player1.getJail()) {
+			move = 1;
+		}
 		continue;
 	}
  }
